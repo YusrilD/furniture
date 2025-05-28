@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Cozy Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">Cozy Home</a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html#new-arrivals">New Arrivals</a>
+                <a href="index.html#furniture">Furniture</a>
+                <a href="index.html#decor">Decor</a>
+                <a href="index.html#lighting">Lighting</a>
+                <a href="index.html#sale">Sale</a>
+            </div>
+            <div class="nav-icons">
+                <div class="search-container">
+                    <input type="text" placeholder="Search">
+                    <i class="fas fa-search"></i>
+                </div>
+                <a href="#wishlist"><i class="far fa-heart"></i></a>
+                <a href="cart.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <a href="profile.html"><i class="far fa-user"></i></a>
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="profile-page">
+        <div class="profile-container">
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80" alt="Profile Picture">
+                </div>
+                <div class="profile-info">
+                    <h1>Sophia Bennett</h1>
+                    <p>Member since 2021</p>
+                </div>
+            </div>
+
+            <div class="profile-tabs">
+                <button class="tab-btn active" data-tab="personal">Personal Information</button>
+                <button class="tab-btn" data-tab="orders">Orders</button>
+                <button class="tab-btn" data-tab="wishlist">Wishlist</button>
+                <button class="tab-btn" data-tab="settings">Settings</button>
+            </div>
+
+            <div class="tab-content active" id="personal">
+                <form class="profile-form">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" value="Sophia Bennett">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" value="sophia@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" value="+1 (555) 123-4567">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <textarea id="address">123 Main Street, Apt 4B
+New York, NY 10001</textarea>
+                    </div>
+                    <button type="submit" class="save-btn">Save Changes</button>
+                </form>
+            </div>
+
+            <div class="tab-content" id="orders">
+                <div class="order-history">
+                    <div class="order-card">
+                        <div class="order-header">
+                            <h3>Order #12345</h3>
+                            <span class="order-date">October 15, 2023</span>
+                            <span class="order-status delivered">Delivered</span>
+                        </div>
+                        <div class="order-items">
+                            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80" alt="Modern Sofa">
+                            <div class="order-details">
+                                <h4>Modern Sofa</h4>
+                                <p>$799.99</p>
+                            </div>
+                        </div>
+                        <button class="view-order-btn">View Order Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="wishlist">
+                <div class="wishlist-grid">
+                    <div class="wishlist-item">
+                        <img src="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&q=80" alt="Chair">
+                        <div class="wishlist-details">
+                            <h3>Modern Chair</h3>
+                            <p class="price">$149.99</p>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                            <button class="remove-wishlist-btn"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="settings">
+                <div class="settings-form">
+                    <div class="form-group">
+                        <label>Email Notifications</label>
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="emailNotif" checked>
+                            <label for="emailNotif"></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Newsletter Subscription</label>
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="newsletter" checked>
+                            <label for="newsletter"></label>
+                        </div>
+                    </div>
+                    <button class="change-password-btn">Change Password</button>
+                    <button class="delete-account-btn">Delete Account</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="faq.html">FAQ</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-pinterest"></i></a>
+            </div>
+            <p class="copyright">©2024 Cozy Home. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 
