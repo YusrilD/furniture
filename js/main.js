@@ -2,11 +2,45 @@
 const mobileMenuBtn = document.querySelector('.mobile-menu');
 const navLinks = document.querySelector('.nav-links');
 const navIcons = document.querySelector('.nav-icons');
+const navItems = document.querySelectorAll('.nav-item');
 
+// Toggle mobile menu
 mobileMenuBtn.addEventListener('click', () => {
     mobileMenuBtn.classList.toggle('active');
-    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-    navIcons.style.display = navIcons.style.display === 'flex' ? 'none' : 'flex';
+    navLinks.classList.toggle('active');
+    navIcons.style.display = navLinks.classList.contains('active') ? 'none' : 'flex';
+});
+
+// Handle dropdown toggles in mobile view
+navItems.forEach(item => {
+    const link = item.querySelector('.nav-link');
+    if (link) {
+        link.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                item.classList.toggle('active');
+                
+                // Close other dropdowns
+                navItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+            }
+        });
+    }
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (window.innerWidth <= 768) {
+        if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+            navLinks.classList.remove('active');
+            mobileMenuBtn.classList.remove('active');
+            navIcons.style.display = 'flex';
+            navItems.forEach(item => item.classList.remove('active'));
+        }
+    }
 });
 
 // Cart Counter and Functionality
@@ -15,14 +49,16 @@ let cartCount = parseInt(cartCountElement?.textContent || '0');
 
 // Newsletter Form
 const newsletterForm = document.querySelector('.newsletter-form');
-newsletterForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const email = newsletterForm.querySelector('input').value;
-    if (email) {
-        alert('Thank you for subscribing!');
-        newsletterForm.reset();
-    }
-});
+if (newsletterForm) {
+    newsletterForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = newsletterForm.querySelector('input').value;
+        if (email) {
+            alert('Thank you for subscribing!');
+            newsletterForm.reset();
+        }
+    });
+}
 
 // Smooth Scroll for Navigation Links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -174,4 +210,40 @@ toggleSwitches.forEach(toggle => {
         const isEnabled = toggle.checked;
         console.log(`${setting} is now ${isEnabled ? 'enabled' : 'disabled'}`);
     });
-}); 
+});
+
+// Contact Form Handling
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(contactForm);
+        const data = Object.fromEntries(formData);
+        
+        // Here you would typically send the data to a server
+        console.log('Form submitted:', data);
+        
+        // Show success message
+        const successMessage = document.createElement('div');
+        successMessage.className = 'success-message';
+        successMessage.textContent = 'Thank you for your message! We will get back to you soon.';
+        
+        contactForm.appendChild(successMessage);
+        setTimeout(() => {
+            successMessage.classList.add('show');
+        }, 100);
+        
+        // Reset form
+        contactForm.reset();
+        
+        // Remove success message after 5 seconds
+        setTimeout(() => {
+            successMessage.classList.remove('show');
+            setTimeout(() => {
+                successMessage.remove();
+            }, 300);
+        }, 5000);
+    });
+} 
