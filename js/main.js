@@ -11,10 +11,13 @@ mobileMenuBtn.addEventListener('click', () => {
     navIcons.style.display = navLinks.classList.contains('active') ? 'none' : 'flex';
 });
 
-// Handle dropdown toggles in mobile view
+// Handle dropdown toggles in mobile view and desktop
 navItems.forEach(item => {
     const link = item.querySelector('.nav-link');
+    const dropdown = item.querySelector('.dropdown-menu');
+    
     if (link) {
+        // Handle mobile click
         link.addEventListener('click', (e) => {
             if (window.innerWidth <= 768) {
                 e.preventDefault();
@@ -28,7 +31,29 @@ navItems.forEach(item => {
                 });
             }
         });
+
+        // Handle desktop hover
+        if (window.innerWidth > 768) {
+            item.addEventListener('mouseenter', () => {
+                item.classList.add('active');
+            });
+            
+            item.addEventListener('mouseleave', () => {
+                item.classList.remove('active');
+            });
+        }
     }
+});
+
+// Handle collection links
+const collectionLinks = document.querySelectorAll('.collection-link');
+collectionLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        // Remove active class from all collection links
+        collectionLinks.forEach(l => l.classList.remove('active'));
+        // Add active class to clicked link
+        link.classList.add('active');
+    });
 });
 
 // Close mobile menu when clicking outside

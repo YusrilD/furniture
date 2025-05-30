@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collections - Cozy Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/shop/category.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">Cozy Home</a>
+            </div>
+            <div class="nav-links">
+                <a href="new-arrivals.html" class="nav-link highlight">New Arrivals</a>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">
+                        Shop <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="pages/shop/living-room.html">Living Room</a>
+                        <a href="pages/shop/dining-room.html">Dining Room</a>
+                        <a href="pages/shop/bedroom.html">Bedroom</a>
+                        <a href="pages/shop/home-office.html">Home Office</a>
+                        <a href="pages/shop/outdoor.html">Outdoor</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link active">
+                        Collections <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="collection.html?type=modern" class="collection-link">Modern</a>
+                        <a href="collection.html?type=scandinavian" class="collection-link">Scandinavian</a>
+                        <a href="collection.html?type=industrial" class="collection-link">Industrial</a>
+                        <a href="collection.html?type=minimalist" class="collection-link">Minimalist</a>
+                        <a href="collection.html?type=bohemian" class="collection-link">Bohemian</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">
+                        Deals <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="deals.html?type=clearance">Clearance</a>
+                        <a href="deals.html?type=sale">Sale</a>
+                        <a href="deals.html?type=bundle">Bundle & Save</a>
+                    </div>
+                </div>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="nav-icons">
+                <div class="search-container">
+                    <input type="text" placeholder="Search">
+                    <i class="fas fa-search"></i>
+                </div>
+                <a href="#wishlist"><i class="far fa-heart"></i></a>
+                <a href="cart.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <a href="profile.html"><i class="far fa-user"></i></a>
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Collection Hero Section -->
+    <section class="category-hero">
+        <div class="hero-content">
+            <h1 id="collection-title">Collection</h1>
+            <p id="collection-description">Discover our curated collection of furniture</p>
+        </div>
+    </section>
+
+    <!-- Collection Section -->
+    <section class="shop-section">
+        <div class="container">
+            <!-- Filters and Sort -->
+            <div class="shop-controls">
+                <div class="filters">
+                    <button class="filter-toggle">
+                        <i class="fas fa-filter"></i> Filters
+                    </button>
+                    <div class="filter-panel">
+                        <div class="filter-group">
+                            <h3>Price Range</h3>
+                            <div class="price-range">
+                                <input type="range" min="0" max="5000" value="5000" class="price-slider">
+                                <div class="price-inputs">
+                                    <input type="number" min="0" max="5000" value="0" class="min-price">
+                                    <span>to</span>
+                                    <input type="number" min="0" max="5000" value="5000" class="max-price">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-group">
+                            <h3>Room</h3>
+                            <label><input type="checkbox" value="living-room"> Living Room</label>
+                            <label><input type="checkbox" value="dining-room"> Dining Room</label>
+                            <label><input type="checkbox" value="bedroom"> Bedroom</label>
+                            <label><input type="checkbox" value="home-office"> Home Office</label>
+                            <label><input type="checkbox" value="outdoor"> Outdoor</label>
+                        </div>
+                        <div class="filter-group">
+                            <h3>Material</h3>
+                            <label><input type="checkbox" value="wood"> Wood</label>
+                            <label><input type="checkbox" value="metal"> Metal</label>
+                            <label><input type="checkbox" value="fabric"> Fabric</label>
+                            <label><input type="checkbox" value="leather"> Leather</label>
+                            <label><input type="checkbox" value="glass"> Glass</label>
+                        </div>
+                        <button class="apply-filters">Apply Filters</button>
+                        <button class="clear-filters">Clear All</button>
+                    </div>
+                </div>
+                <div class="sort">
+                    <select class="sort-select">
+                        <option value="featured">Featured</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="newest">Newest</option>
+                        <option value="bestselling">Best Selling</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="product-grid" id="collection-products">
+                <!-- Products will be dynamically loaded here -->
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="prev-page" disabled><i class="fas fa-chevron-left"></i></button>
+                <div class="page-numbers">
+                    <button class="active">1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <span>...</span>
+                    <button>10</button>
+                </div>
+                <button class="next-page"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="faq.html">FAQ</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-pinterest"></i></a>
+            </div>
+            <p class="copyright">©2024 Cozy Home. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/shop/category.js"></script>
+    <script src="js/collection.js"></script>
+</body>
+</html> 
