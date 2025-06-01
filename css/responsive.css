@@ -1,7 +1,55 @@
+/* Desktop Medium Screens (1200px - 1400px) */
+@media screen and (max-width: 1400px) {
+    .nav-links {
+        gap: 1.5rem;
+    }
+    
+    .nav-links a,
+    .nav-item .nav-link {
+        font-size: 0.9rem;
+        padding: 0.5rem 0.8rem;
+    }
+}
+
+/* Desktop Small Screens (1024px - 1200px) */
+@media screen and (max-width: 1200px) {
+    .nav-links {
+        gap: 1rem;
+    }
+    
+    .nav-links a,
+    .nav-item .nav-link {
+        font-size: 0.85rem;
+        padding: 0.5rem 0.6rem;
+    }
+
+    .dropdown-menu {
+        min-width: 200px;
+    }
+
+    .nav-icons {
+        gap: 0.8rem;
+    }
+}
+
 /* Tablet Styles (768px - 1024px) */
 @media screen and (max-width: 1024px) {
     .nav-links {
-        gap: 1rem;
+        gap: 0.8rem;
+    }
+
+    .nav-links a,
+    .nav-item .nav-link {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.5rem;
+    }
+
+    .dropdown-menu {
+        min-width: 180px;
+    }
+
+    .nav-icons {
+        gap: 0.6rem;
     }
 
     .hero h1 {
