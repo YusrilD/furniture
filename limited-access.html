@@ -3,12 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Product - Cozy Home</title>
+    <title>Limited Access - Cozy Home</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/new-arrivals.css">
-    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="css/limited-access.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .limited-access {
+            min-height: calc(100vh - 200px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            background-color: #f8f9fa;
+        }
+
+        .limited-access i {
+            font-size: 4rem;
+            color: #00b894;
+            margin-bottom: 1.5rem;
+        }
+
+        .limited-access h1 {
+            font-size: 2.5rem;
+            color: #2d3436;
+            margin-bottom: 1rem;
+        }
+
+        .limited-access p {
+            color: #636e72;
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+
+        .back-home {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: #00b894;
+            color: white;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .back-home:hover {
+            background-color: #00a383;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .limited-access h1 {
+                font-size: 2rem;
+            }
+
+            .limited-access i {
+                font-size: 3rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header Section -->
@@ -18,7 +73,7 @@
                 <a href="index.html">Cozy Home</a>
             </div>
             <div class="nav-links">
-                <a href="new-arrivals.html" class="active">New Product</a>
+                <a href="new-arrivals.html">New Products</a>
                 <div class="nav-item">
                     <a href="#" class="nav-link">
                         Shop <i class="fas fa-chevron-down"></i>
@@ -69,77 +124,35 @@
         </nav>
     </header>
 
-    <!-- New Product Hero -->
-    <section class="new-arrivals-hero">
-        <div class="hero-content">
-            <h1>New Product</h1>
-            <p>Be the first to know about new product and exclusive offers!</p>
+    <!-- Main Content -->
+    <main class="limited-access">
+        <div class="limited-access-content">
+            <i class="fas fa-lock"></i>
+            <h1>Limited Access</h1>
+            <p>This feature is currently unavailable. Please check back later.</p>
+            <a href="index.html" class="back-home">Back to Home</a>
         </div>
-    </section>
-
-    <!-- Filter Section -->
-    <section class="filter-section">
-        <div class="filter-container">
-            <div class="filter-group">
-                <label>Sort by:</label>
-                <select id="sort-filter">
-                    <option value="">Sort Products</option>
-                    <option value="newest">Newest First</option>
-                    <option value="price-low">Price: Low to High</option>
-                    <option value="price-high">Price: High to Low</option>
-                </select>
-            </div>
-            <div class="filter-group">
-                <label>Category:</label>
-                <select id="category-filter">
-                    <option value="">Select Category</option>
-                    <option value="all">All Categories</option>
-                    <option value="furniture">Furniture</option>
-                    <option value="decor">Decor</option>
-                    <option value="lighting">Lighting</option>
-                </select>
-            </div>
-        </div>
-    </section>
-
-    <!-- Products Grid -->
-    <section class="products-grid">
-        <div class="products-container" id="new-arrivals-container">
-            <!-- Products will be dynamically loaded here -->
-        </div>
-    </section>
-
-    <!-- Newsletter Section -->
-    <section class="newsletter">
-        <h2>Join our mailing list</h2>
-        <p>Be the first to know about new product and exclusive offers!</p>
-        <form class="newsletter-form">
-            <input type="email" placeholder="Enter your email">
-            <button type="submit" class="subscribe-btn">Subscribe</button>
-        </form>
-    </section>
+    </main>
 
     <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-links">
-                <a href="about.html">About Us</a>
-                <a href="contact.html">Contact</a>
-                <a href="faq.html">FAQ</a>
-                <a href="terms.html">Terms of Service</a>
-                <a href="privacy.html">Privacy Policy</a>
+                <a href="limited-access.html">About Us</a>
+                <a href="limited-access.html">Contact</a>
+                <a href="limited-access.html">FAQ</a>
+                <a href="limited-access.html">Terms of Service</a>
+                <a href="limited-access.html">Privacy Policy</a>
             </div>
             <div class="social-links">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-pinterest"></i></a>
+                <a href="limited-access.html"><i class="fab fa-instagram"></i></a>
+                <a href="limited-access.html"><i class="fab fa-facebook"></i></a>
+                <a href="limited-access.html"><i class="fab fa-pinterest"></i></a>
             </div>
             <p class="copyright">©2024 Cozy Home. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="js/main.js"></script>
-    <script src="js/cart.js"></script>
-    <script src="js/new-arrivals.js"></script>
 </body>
 </html> 

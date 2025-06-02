@@ -6,18 +6,23 @@
     <title>Cozy Home - Furniture Store</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/mobile-nav.css">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <!-- Header Section -->
     <header>
+        <!-- Desktop Navigation -->
         <nav class="navbar">
             <div class="logo">
                 <a href="index.html">Cozy Home</a>
             </div>
+            <button class="mobile-menu" aria-label="Toggle Menu">
+                <i class="fas fa-bars"></i>
+            </button>
             <div class="nav-links">
-                <a href="new-arrivals.html" class="nav-link highlight">New Arrivals</a>
+                <a href="new-arrivals.html">New Product</a>
                 <div class="nav-item">
                     <a href="#" class="nav-link">
                         Shop <i class="fas fa-chevron-down"></i>
@@ -42,16 +47,6 @@
                         <a href="pages/collections/bohemian.html">Bohemian</a>
                     </div>
                 </div>
-                <div class="nav-item">
-                    <a href="#" class="nav-link">
-                        Deals <i class="fas fa-chevron-down"></i>
-                    </a>
-                    <div class="dropdown-menu">
-                        <a href="deals.html?type=clearance">Clearance</a>
-                        <a href="deals.html?type=sale">Sale</a>
-                        <a href="deals.html?type=bundle">Bundle & Save</a>
-                    </div>
-                </div>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
             </div>
@@ -60,17 +55,79 @@
                     <input type="text" placeholder="Search">
                     <i class="fas fa-search"></i>
                 </div>
-                <a href="#wishlist"><i class="far fa-heart"></i></a>
-                <a href="cart.html" class="cart-icon">
+                <a href="limited-access.html" class="nav-icon">
+                    <i class="far fa-heart"></i>
+                    <span>Wishlist</span>
+                </a>
+                <a href="cart.html" class="nav-icon cart-icon">
                     <i class="fas fa-shopping-cart"></i>
                     <span class="cart-count">0</span>
                 </a>
-                <a href="profile.html"><i class="far fa-user"></i></a>
-            </div>
-            <div class="mobile-menu">
-                <i class="fas fa-bars"></i>
+                <a href="profile.html" class="nav-icon">
+                    <i class="far fa-user"></i>
+                </a>
             </div>
         </nav>
+
+        <!-- Mobile Navigation -->
+        <div class="nav-mobile">
+            <div class="mobile-nav-header">
+                <div class="logo">
+                    <a href="index.html">Cozy Home</a>
+                </div>
+                <button class="mobile-close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-container">
+                <input type="text" placeholder="Search products...">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="nav-links">
+                <a href="new-arrivals.html">New Product</a>
+                <div class="nav-item">
+                    <div class="nav-link">
+                        Shop <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="dropdown-menu">
+                        <a href="pages/shop/living-room.html">Living Room</a>
+                        <a href="pages/shop/dining-room.html">Dining Room</a>
+                        <a href="pages/shop/bedroom.html">Bedroom</a>
+                        <a href="pages/shop/home-office.html">Home Office</a>
+                        <a href="pages/shop/outdoor.html">Outdoor</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <div class="nav-link">
+                        Collections <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="dropdown-menu">
+                        <a href="pages/collections/modern.html">Modern</a>
+                        <a href="pages/collections/scandinavian.html">Scandinavian</a>
+                        <a href="pages/collections/industrial.html">Industrial</a>
+                        <a href="pages/collections/minimalist.html">Minimalist</a>
+                        <a href="pages/collections/bohemian.html">Bohemian</a>
+                    </div>
+                </div>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="nav-icons">
+                <a href="profile.html" class="nav-icon">
+                    <i class="far fa-user"></i>
+                    <span>My Account</span>
+                </a>
+                <a href="limited-access.html" class="nav-icon">
+                    <i class="far fa-heart"></i>
+                    <span>Wishlist</span>
+                </a>
+                <a href="cart.html" class="nav-icon cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Cart</span>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
     </header>
 
     <!-- Hero Section -->
@@ -78,37 +135,126 @@
         <div class="hero-content">
             <h1>The New Spring Collection</h1>
             <p>Discover the latest trends in home decor and furniture. Refresh your space with our curated selection of essentials.</p>
-            <a href="#shop" class="cta-button">Shop Now</a>
+            <a href="new-arrivals.html" class="cta-button">Shop Now</a>
         </div>
     </section>
 
     <!-- Categories Section -->
     <section class="categories">
         <h2>Shop by Category</h2>
+        
+        <!-- Desktop/Tablet Grid Layout -->
         <div class="category-grid">
             <div class="category-card">
                 <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80" alt="Sofas">
                 <h3>Sofas</h3>
+                <a href="limited-access.html" class="category-link"></a>
             </div>
             <div class="category-card">
                 <img src="https://images.unsplash.com/photo-1505693314120-0d443867891c?auto=format&fit=crop&q=80" alt="Beds">
                 <h3>Beds</h3>
+                <a href="limited-access.html" class="category-link"></a>
             </div>
             <div class="category-card">
                 <img src="https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?auto=format&fit=crop&q=80" alt="Dining Tables">
                 <h3>Dining Tables</h3>
+                <a href="limited-access.html" class="category-link"></a>
             </div>
             <div class="category-card">
                 <img src="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&q=80" alt="Chairs">
                 <h3>Chairs</h3>
+                <a href="limited-access.html" class="category-link"></a>
             </div>
             <div class="category-card">
                 <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&q=80" alt="Storage">
                 <h3>Storage</h3>
+                <a href="limited-access.html" class="category-link"></a>
             </div>
             <div class="category-card">
                 <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&q=80" alt="Decor">
                 <h3>Decor</h3>
+                <a href="limited-access.html" class="category-link"></a>
+            </div>
+        </div>
+
+        <!-- Mobile Stacked Layout -->
+        <div class="category-list">
+            <div class="category-item">
+                <div class="category-main">
+                    <span>Sofas</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="category-details">
+                    <a href="limited-access.html">Sectional Sofas</a>
+                    <a href="limited-access.html">Sleeper Sofas</a>
+                    <a href="limited-access.html">Loveseats</a>
+                    <a href="limited-access.html">Recliners</a>
+                </div>
+            </div>
+
+            <div class="category-item">
+                <div class="category-main">
+                    <span>Beds</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="category-details">
+                    <a href="limited-access.html">Platform Beds</a>
+                    <a href="limited-access.html">Storage Beds</a>
+                    <a href="limited-access.html">Canopy Beds</a>
+                    <a href="limited-access.html">Daybeds</a>
+                </div>
+            </div>
+
+            <div class="category-item">
+                <div class="category-main">
+                    <span>Dining Tables</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="category-details">
+                    <a href="limited-access.html">Extendable Tables</a>
+                    <a href="limited-access.html">Round Tables</a>
+                    <a href="limited-access.html">Counter Height Tables</a>
+                    <a href="limited-access.html">Dining Sets</a>
+                </div>
+            </div>
+
+            <div class="category-item">
+                <div class="category-main">
+                    <span>Chairs</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="category-details">
+                    <a href="limited-access.html">Dining Chairs</a>
+                    <a href="limited-access.html">Accent Chairs</a>
+                    <a href="limited-access.html">Office Chairs</a>
+                    <a href="limited-access.html">Bar Stools</a>
+                </div>
+            </div>
+
+            <div class="category-item">
+                <div class="category-main">
+                    <span>Storage</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="category-details">
+                    <a href="limited-access.html">Bookcases</a>
+                    <a href="limited-access.html">TV Stands</a>
+                    <a href="limited-access.html">Cabinets</a>
+                    <a href="limited-access.html">Wardrobes</a>
+                </div>
+            </div>
+
+            <div class="category-item">
+                <div class="category-main">
+                    <span>Decor</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="category-details">
+                    <a href="limited-access.html">Wall Art</a>
+                    <a href="limited-access.html">Mirrors</a>
+                    <a href="limited-access.html">Lighting</a>
+                    <a href="limited-access.html">Rugs</a>
+                </div>
             </div>
         </div>
     </section>
@@ -120,22 +266,60 @@
             <div class="lookbook-card">
                 <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&q=80" alt="Living Room">
                 <div class="lookbook-content">
-                    <h3>Living Room</h3>
+                    <div class="lookbook-header">
+                        <h3><i class="fas fa-couch"></i> Living Room</h3>
+                        <div class="lookbook-features">
+                            <span><i class="fas fa-ruler-combined"></i> Spacious</span>
+                            <span><i class="fas fa-sun"></i> Well-lit</span>
+                            <span><i class="fas fa-palette"></i> Modern</span>
+                        </div>
+                    </div>
                     <p>Create a cozy and inviting living space with our stylish furniture.</p>
+                    <div class="lookbook-items">
+                        <span><i class="fas fa-check"></i> Premium Sofas</span>
+                        <span><i class="fas fa-check"></i> Coffee Tables</span>
+                        <span><i class="fas fa-check"></i> Entertainment Units</span>
+                    </div>
                 </div>
             </div>
+
             <div class="lookbook-card">
                 <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&q=80" alt="Bedroom">
                 <div class="lookbook-content">
-                    <h3>Bedroom</h3>
+                    <div class="lookbook-header">
+                        <h3><i class="fas fa-bed"></i> Bedroom</h3>
+                        <div class="lookbook-features">
+                            <span><i class="fas fa-moon"></i> Peaceful</span>
+                            <span><i class="fas fa-feather"></i> Comfortable</span>
+                            <span><i class="fas fa-star"></i> Elegant</span>
+                        </div>
+                    </div>
                     <p>Transform your bedroom into a serene retreat with our comfortable and chic designs.</p>
+                    <div class="lookbook-items">
+                        <span><i class="fas fa-check"></i> Luxury Beds</span>
+                        <span><i class="fas fa-check"></i> Wardrobes</span>
+                        <span><i class="fas fa-check"></i> Bedside Tables</span>
+                    </div>
                 </div>
             </div>
+
             <div class="lookbook-card">
                 <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&q=80" alt="Dining Room">
                 <div class="lookbook-content">
-                    <h3>Dining Room</h3>
+                    <div class="lookbook-header">
+                        <h3><i class="fas fa-utensils"></i> Dining Room</h3>
+                        <div class="lookbook-features">
+                            <span><i class="fas fa-users"></i> Social</span>
+                            <span><i class="fas fa-gem"></i> Luxurious</span>
+                            <span><i class="fas fa-wine-glass"></i> Elegant</span>
+                        </div>
+                    </div>
                     <p>Elevate your dining experience with our sophisticated tables and chairs.</p>
+                    <div class="lookbook-items">
+                        <span><i class="fas fa-check"></i> Dining Tables</span>
+                        <span><i class="fas fa-check"></i> Dining Chairs</span>
+                        <span><i class="fas fa-check"></i> Sideboards</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -155,16 +339,16 @@
     <footer>
         <div class="footer-content">
             <div class="footer-links">
-                <a href="about.html">About Us</a>
-                <a href="contact.html">Contact</a>
-                <a href="faq.html">FAQ</a>
-                <a href="terms.html">Terms of Service</a>
-                <a href="privacy.html">Privacy Policy</a>
+                <a href="limited-access.html">About Us</a>
+                <a href="limited-access.html">Contact</a>
+                <a href="limited-access.html">FAQ</a>
+                <a href="limited-access.html">Terms of Service</a>
+                <a href="limited-access.html">Privacy Policy</a>
             </div>
             <div class="social-links">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-pinterest"></i></a>
+                <a href="limited-access.html"><i class="fab fa-instagram"></i></a>
+                <a href="limited-access.html"><i class="fab fa-facebook"></i></a>
+                <a href="limited-access.html"><i class="fab fa-pinterest"></i></a>
             </div>
             <p class="copyright">©2024 Cozy Home. All rights reserved.</p>
         </div>

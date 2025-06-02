@@ -67,6 +67,10 @@
 
 /* Mobile Styles (< 768px) */
 @media screen and (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+    }
+
     .nav-links {
         display: none;
     }
@@ -77,6 +81,12 @@
 
     .mobile-menu {
         display: block;
+        position: relative;
+        z-index: 1001;
+    }
+
+    .logo {
+        font-size: 1.5rem;
     }
 
     .mobile-menu.active + .nav-links {

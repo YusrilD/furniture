@@ -132,7 +132,7 @@ class CartManager {
                         <a href="index.html" class="cta-button">Continue Shopping</a>
                         <div class="quick-links">
                             <p>Quick Links:</p>
-                            <a href="new-arrivals.html">New Arrivals</a>
+                            <a href="new-arrivals.html">New Products</a>
                             <a href="#furniture">Furniture</a>
                             <a href="#decor">Decor</a>
                             <a href="#lighting">Lighting</a>

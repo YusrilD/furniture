@@ -7,6 +7,246 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .profile-page {
+            padding: 4rem 5%;
+            min-height: calc(100vh - 200px);
+            background-color: #f8f9fa;
+        }
+
+        .profile-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2rem;
+        }
+
+        .profile-sidebar {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            height: fit-content;
+        }
+
+        .profile-picture {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f0f1f7;
+            color: #00b894;
+        }
+
+        .profile-picture i {
+            font-size: 3rem;
+        }
+
+        .profile-name {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .profile-name h2 {
+            color: #2d3436;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-name p {
+            color: #636e72;
+            font-size: 0.9rem;
+        }
+
+        .profile-menu {
+            list-style: none;
+            padding: 0;
+        }
+
+        .profile-menu li {
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-menu a {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            color: #2d3436;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .profile-menu a:hover,
+        .profile-menu a.active {
+            background: #f0fffc;
+            color: #00b894;
+        }
+
+        .profile-menu i {
+            width: 20px;
+        }
+
+        .profile-content {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: #2d3436;
+            margin-bottom: 2rem;
+        }
+
+        .profile-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .stat-card i {
+            font-size: 2rem;
+            color: #00b894;
+            margin-bottom: 1rem;
+        }
+
+        .stat-card h3 {
+            font-size: 1.8rem;
+            color: #2d3436;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card p {
+            color: #636e72;
+            font-size: 0.9rem;
+        }
+
+        .recent-orders {
+            margin-bottom: 3rem;
+        }
+
+        .order-card {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            border: 1px solid #f0f1f7;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+        }
+
+        .order-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .order-details h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: #2d3436;
+        }
+
+        .order-details p {
+            color: #636e72;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .order-status {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .status-delivered {
+            background: #f0fffc;
+            color: #00b894;
+        }
+
+        .status-processing {
+            background: #fff8e1;
+            color: #ffa000;
+        }
+
+        .order-price {
+            font-weight: 600;
+            color: #2d3436;
+        }
+
+        .edit-profile-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: #00b894;
+            color: white;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            margin-top: 1rem;
+        }
+
+        .edit-profile-btn:hover {
+            background-color: #00a383;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 1024px) {
+            .profile-container {
+                grid-template-columns: 250px 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .profile-page {
+                padding: 2rem 1rem;
+            }
+
+            .profile-container {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-sidebar {
+                position: sticky;
+                top: 80px;
+            }
+
+            .profile-menu {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            .profile-menu a {
+                padding: 0.8rem;
+                font-size: 0.9rem;
+            }
+
+            .order-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .order-image {
+                margin: 0 auto;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header Section -->
@@ -16,7 +256,7 @@
                 <a href="index.html">Cozy Home</a>
             </div>
             <div class="nav-links">
-                <a href="new-arrivals.html" class="nav-link highlight">New Arrivals</a>
+                <a href="new-arrivals.html">New Products</a>
                 <div class="nav-item">
                     <a href="#" class="nav-link">
                         Shop <i class="fas fa-chevron-down"></i>
@@ -34,138 +274,84 @@
                         Collections <i class="fas fa-chevron-down"></i>
                     </a>
                     <div class="dropdown-menu">
-                        <a href="collection.html?type=modern">Modern</a>
-                        <a href="collection.html?type=scandinavian">Scandinavian</a>
-                        <a href="collection.html?type=industrial">Industrial</a>
-                        <a href="collection.html?type=minimalist">Minimalist</a>
-                        <a href="collection.html?type=bohemian">Bohemian</a>
+                        <a href="pages/collections/modern.html">Modern</a>
+                        <a href="pages/collections/scandinavian.html">Scandinavian</a>
+                        <a href="pages/collections/industrial.html">Industrial</a>
+                        <a href="pages/collections/minimalist.html">Minimalist</a>
+                        <a href="pages/collections/bohemian.html">Bohemian</a>
                     </div>
                 </div>
-                <div class="nav-item">
-                    <a href="#" class="nav-link">
-                        Deals <i class="fas fa-chevron-down"></i>
-                    </a>
-                    <div class="dropdown-menu">
-                        <a href="deals.html?type=clearance">Clearance</a>
-                        <a href="deals.html?type=sale">Sale</a>
-                        <a href="deals.html?type=bundle">Bundle & Save</a>
-                    </div>
-                </div>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
+                <a href="limited-access.html">About</a>
+                <a href="limited-access.html">Contact</a>
             </div>
             <div class="nav-icons">
                 <div class="search-container">
                     <input type="text" placeholder="Search">
                     <i class="fas fa-search"></i>
                 </div>
-                <a href="#wishlist"><i class="far fa-heart"></i></a>
-                <a href="cart.html" class="cart-icon">
+                <a href="limited-access.html" class="nav-icon">
+                    <i class="far fa-heart"></i>
+                    <span>Wishlist</span>
+                </a>
+                <a href="cart.html" class="nav-icon cart-icon">
                     <i class="fas fa-shopping-cart"></i>
                     <span class="cart-count">0</span>
                 </a>
-                <a href="profile.html" class="active"><i class="far fa-user"></i></a>
+                <a href="profile.html" class="nav-icon">
+                    <i class="far fa-user"></i>
+                </a>
             </div>
-            <div class="mobile-menu">
+            <button class="mobile-menu">
                 <i class="fas fa-bars"></i>
-            </div>
+            </button>
         </nav>
     </header>
 
+    <!-- Profile Content -->
     <main class="profile-page">
         <div class="profile-container">
-            <div class="profile-header">
-                <div class="profile-avatar">
-                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80" alt="Profile Picture">
+            <aside class="profile-sidebar">
+                <div class="profile-picture">
+                    <i class="far fa-user"></i>
                 </div>
-                <div class="profile-info">
-                    <h1>Sophia Bennett</h1>
-                    <p>Member since 2021</p>
+                <div class="profile-name">
+                    <h2>Guest User</h2>
+                    <p>Please sign in to access your profile</p>
                 </div>
-            </div>
+                <ul class="profile-menu">
+                    <li><a href="limited-access.html" class="active"><i class="fas fa-user"></i> Profile</a></li>
+                    <li><a href="limited-access.html"><i class="fas fa-shopping-bag"></i> Orders</a></li>
+                    <li><a href="limited-access.html"><i class="far fa-heart"></i> Wishlist</a></li>
+                    <li><a href="limited-access.html"><i class="fas fa-map-marker-alt"></i> Addresses</a></li>
+                    <li><a href="limited-access.html"><i class="fas fa-cog"></i> Settings</a></li>
+                </ul>
+            </aside>
 
-            <div class="profile-tabs">
-                <button class="tab-btn active" data-tab="personal">Personal Information</button>
-                <button class="tab-btn" data-tab="orders">Orders</button>
-                <button class="tab-btn" data-tab="wishlist">Wishlist</button>
-                <button class="tab-btn" data-tab="settings">Settings</button>
-            </div>
-
-            <div class="tab-content active" id="personal">
-                <form class="profile-form">
-                    <div class="form-group">
-                        <label for="fullName">Full Name</label>
-                        <input type="text" id="fullName" value="Sophia Bennett">
+            <div class="profile-content">
+                <h1 class="section-title">Profile Overview</h1>
+                
+                <div class="profile-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-shopping-bag"></i>
+                        <h3>0</h3>
+                        <p>Total Orders</p>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" value="sophia@example.com">
+                    <div class="stat-card">
+                        <i class="far fa-heart"></i>
+                        <h3>0</h3>
+                        <p>Wishlist Items</p>
                     </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" value="+1 (555) 123-4567">
-                    </div>
-                    <div class="form-group">
-                        <label for="address">Address</label>
-                        <textarea id="address">123 Main Street, Apt 4B
-New York, NY 10001</textarea>
-                    </div>
-                    <button type="submit" class="save-btn">Save Changes</button>
-                </form>
-            </div>
-
-            <div class="tab-content" id="orders">
-                <div class="order-history">
-                    <div class="order-card">
-                        <div class="order-header">
-                            <h3>Order #12345</h3>
-                            <span class="order-date">October 15, 2023</span>
-                            <span class="order-status delivered">Delivered</span>
-                        </div>
-                        <div class="order-items">
-                            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80" alt="Modern Sofa">
-                            <div class="order-details">
-                                <h4>Modern Sofa</h4>
-                                <p>$799.99</p>
-                            </div>
-                        </div>
-                        <button class="view-order-btn">View Order Details</button>
+                    <div class="stat-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>0</h3>
+                        <p>Saved Addresses</p>
                     </div>
                 </div>
-            </div>
 
-            <div class="tab-content" id="wishlist">
-                <div class="wishlist-grid">
-                    <div class="wishlist-item">
-                        <img src="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&q=80" alt="Chair">
-                        <div class="wishlist-details">
-                            <h3>Modern Chair</h3>
-                            <p class="price">$149.99</p>
-                            <button class="add-to-cart-btn">Add to Cart</button>
-                            <button class="remove-wishlist-btn"><i class="fas fa-trash"></i></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tab-content" id="settings">
-                <div class="settings-form">
-                    <div class="form-group">
-                        <label>Email Notifications</label>
-                        <div class="toggle-switch">
-                            <input type="checkbox" id="emailNotif" checked>
-                            <label for="emailNotif"></label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Newsletter Subscription</label>
-                        <div class="toggle-switch">
-                            <input type="checkbox" id="newsletter" checked>
-                            <label for="newsletter"></label>
-                        </div>
-                    </div>
-                    <button class="change-password-btn">Change Password</button>
-                    <button class="delete-account-btn">Delete Account</button>
+                <div class="recent-orders">
+                    <h2 class="section-title">Recent Orders</h2>
+                    <p>Please sign in to view your order history</p>
+                    <a href="limited-access.html" class="edit-profile-btn">Sign In</a>
                 </div>
             </div>
         </div>
