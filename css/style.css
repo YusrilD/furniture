@@ -383,7 +383,7 @@ a {
     }
 
     .cta-button {
-        padding: 1rem 2rem;
+        padding: 1rem 2.5rem;
         font-size: 1rem;
         border-radius: 30px;
         background: var(--color-wood-dark);
@@ -645,17 +645,25 @@ copyright {
 
 .cta-button {
     display: inline-block;
-    padding: 1rem 2.5rem;
-    background-color: var(--color-wood-dark);
+    padding: 1.2rem 3rem;
+    background: var(--color-wood-accent);
     color: var(--color-white);
     border-radius: 30px;
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
     transition: all 0.3s ease;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(99, 72, 50, 0.2);
+    border: 2px solid transparent;
 }
 
 .cta-button:hover {
-    background-color: var(--color-wood-dark);
+    background: transparent;
+    color: var(--color-white);
+    border-color: var(--color-white);
     transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(99, 72, 50, 0.3);
 }
 
 /* Categories Section */
@@ -877,6 +885,9 @@ copyright {
     background: var(--color-white);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    display: block;
+    text-decoration: none;
+    color: inherit;
 }
 
 .lookbook-card:hover {

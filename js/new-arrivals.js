@@ -6,6 +6,7 @@ const newArrivals = [
         price: 999.99,
         category: "furniture",
         image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80",
+        description: "Elegant and comfortable leather sofa with modern design",
         dateAdded: new Date("2024-03-15")
     },
     {
@@ -14,6 +15,7 @@ const newArrivals = [
         price: 129.99,
         category: "lighting",
         image: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&q=80",
+        description: "Contemporary table lamp with adjustable brightness",
         dateAdded: new Date("2024-03-14")
     },
     {
@@ -22,6 +24,7 @@ const newArrivals = [
         price: 199.99,
         category: "decor",
         image: "https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&q=80",
+        description: "Elegant round mirror with golden frame",
         dateAdded: new Date("2024-03-13")
     },
     // Add more sample products as needed
@@ -43,14 +46,17 @@ function createProductCard(product) {
 
     return `
         <div class="product-card" data-category="${product.category}">
-            <img src="${product.image}" alt="${product.name}" class="product-image">
+            <div class="product-image">
+                <img src="${product.image}" alt="${product.name}">
+            </div>
             <div class="product-info">
                 <h3 class="product-name">${product.name}</h3>
+                <p class="product-description">${product.description}</p>
                 <p class="product-price">$${product.price.toFixed(2)}</p>
                 <div class="product-meta">
                     ${isNew ? '<span class="new-label">New</span>' : ''}
                     <button class="add-to-cart-btn" onclick="addToCart(${product.id})">
-                        Add to Cart
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
                     </button>
                 </div>
             </div>
@@ -86,6 +92,16 @@ function filterAndSortProducts() {
 // Render products
 function renderProducts() {
     const filteredProducts = filterAndSortProducts();
+    
+    if (filteredProducts.length === 0) {
+        productsContainer.innerHTML = `
+            <div class="no-products">
+                <p>No products found in this category.</p>
+            </div>
+        `;
+        return;
+    }
+    
     productsContainer.innerHTML = filteredProducts.map(createProductCard).join('');
 }
 
@@ -94,7 +110,23 @@ function addToCart(productId) {
     const product = newArrivals.find(p => p.id === productId);
     if (!product) return;
     
-    cartManager.addToCart(product);
+    // Show feedback to user
+    const button = event.target.closest('.add-to-cart-btn');
+    const originalText = button.innerHTML;
+    button.innerHTML = '<i class="fas fa-check"></i> Added';
+    button.disabled = true;
+    
+    setTimeout(() => {
+        button.innerHTML = originalText;
+        button.disabled = false;
+    }, 2000);
+    
+    // Update cart count
+    const cartCount = document.querySelector('.cart-count');
+    if (cartCount) {
+        const currentCount = parseInt(cartCount.textContent) || 0;
+        cartCount.textContent = currentCount + 1;
+    }
 }
 
 // Event Listeners

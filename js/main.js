@@ -288,4 +288,38 @@ if (contactForm) {
             }, 300);
         }, 5000);
     });
-} 
+}
+
+// Category Dropdown Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const categoryItems = document.querySelectorAll('.category-item');
+
+    categoryItems.forEach(item => {
+        const mainSection = item.querySelector('.category-main');
+        
+        if (mainSection) {
+            mainSection.addEventListener('click', () => {
+                // Toggle active class on the clicked item
+                const wasActive = item.classList.contains('active');
+                
+                // First, close all dropdowns
+                categoryItems.forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                    const otherIcon = otherItem.querySelector('.category-main i');
+                    if (otherIcon) {
+                        otherIcon.style.transform = '';
+                    }
+                });
+                
+                // Then, if the clicked item wasn't active before, open it
+                if (!wasActive) {
+                    item.classList.add('active');
+                    const icon = item.querySelector('.category-main i');
+                    if (icon) {
+                        icon.style.transform = 'rotate(180deg)';
+                    }
+                }
+            });
+        }
+    });
+}); 
